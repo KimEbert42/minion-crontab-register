@@ -25,8 +25,8 @@ class Minion_Crontab_Register {
 	{
 		if (is_array($entries))
 		{
-			$entries = implode("\r\n",$entries);
-			$entries .= "\r\n";
+			$entries = implode("\n",$entries);
+			$entries .= "\n";
 		}
 		
 		$tmpfname = tempnam("/tmp", "cron");
