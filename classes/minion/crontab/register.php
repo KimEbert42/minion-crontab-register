@@ -91,9 +91,9 @@ class Minion_Crontab_Register {
 	protected function _get_crontab_string($schedule, $task, $task_options)
 	{
 		$result = "$schedule ";
-		$result .= "pushd $this->minion_dir;";
+		$result .= "pushd $this->minion_dir 2>&1 > /dev/null ;";
 		$result .= "$this->minion_path $task $task_options;";
-		$result .= "popd";
+		$result .= "popd 2>&1 > /dev/null ; ";
 		return $result;
 	}
 
