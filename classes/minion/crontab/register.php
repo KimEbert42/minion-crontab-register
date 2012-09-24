@@ -116,7 +116,7 @@ class Minion_Crontab_Register {
 		{
 			foreach ($crontab as $entry)
 			{
-				if (trim($entry) == $new)
+				if (trim($entry) == trim($new))
 					return false;
 			}
 		}
